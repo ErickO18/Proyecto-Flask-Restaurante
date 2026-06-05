@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Inicio sesion </title>
+
+    <link rel = "stylesheet" href = "/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body">
+
+<header class = "header"> 
+    <h1>Erick's Deliciuos</h1>
+</header>
+
+
+<main>
+    <div class="menu-container">
+
+        <form method="POST">
+
+            <label>Ingrese su nombre de usuario</label>
+            <input type="text" name ="username">
+
+            <label>Ingrese su contraseña</label>
+            <input type="password" name ="password">
+
+            <label > Rol</label>
+            <select name="rol" class="custom-select">
+                <option value="mesero">Mesero</option>
+                <option value ="cocinero">Cocinero</option>
+            </select>
+
+            <button type="submit"> Registrarse</button>
+        </form>
+
+        <div class="text-center">
+        <a href="{{ url_for('paginas.login') }}">Iniciar sesión</a>
+      </div>
+
+
+    </div>
+</main>
+
+
+</body>
+</html>
+
+
+
+
+
+

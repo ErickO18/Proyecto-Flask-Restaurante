@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@300;400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.78)),
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #f3f3f3;
+
+    font-family: 'Manrope', sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    text-align: center;
+
+    padding-top: 70px;
+
+    animation: fadeDown 1s ease;
+}
+
+.header h1{
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 4.5rem;
+
+    color: #d6a86a;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav{
+
+    width: fit-content;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    background: rgba(15,15,15,0.55);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 50px;
+
+    animation: fadeDown 1.2s ease;
+}
+
+.nav a{
+
+    text-decoration: none;
+
+    color: #d6a86a;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+.nav a:hover{
+
+    background-color: rgba(214,168,106,0.12);
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+h2{
+
+    text-align: center;
+
+    margin: 50px 0 35px;
+
+    font-size: 2.8rem;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e6c08a;
+
+    font-weight: 600;
+
+    animation: fadeUp 1s ease;
+}
+
+/* =========================
+   GRID MENU
+========================= */
+
+.menu-grid-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+
+    gap: 35px;
+
+    padding: 20px 5% 60px;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+
+    background: rgba(18,18,18,0.55);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(18px);
+
+    position: relative;
+}
+
+.card:hover{
+
+    transform: translateY(-10px);
+
+    border-color: rgba(214,168,106,0.25);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.35);
+}
+
+.card-img{
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.card:hover .card-img{
+
+    transform: scale(1.05);
+}
+
+.card h3{
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 2rem;
+
+    color: #ffffff;
+
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.card p{
+
+    color: #c2c2c2;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-top: 14px;
+
+    padding: 0 24px;
+
+    text-align: center;
+}
+
+.card .precio{
+
+    display: inline-block;
+
+    margin: 22px auto 28px;
+
+    background: linear-gradient(
+        135deg,
+        #d6a86a,
+        #f0cd97
+    );
+
+    color: #121212;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    position: relative;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* =========================
+   LOGIN / FORMULARIOS
+========================= */
+
+.menu-container{
+
+    width: 100%;
+
+    max-width: 470px;
+
+    margin: 60px auto;
+
+    padding: 45px;
+
+    background: rgba(15,15,15,0.45);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border-radius: 30px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.45),
+    inset 0 1px 1px rgba(255,255,255,0.04);
+
+    position: relative;
+
+    overflow: hidden;
+
+    animation: fadeUp 1s ease;
+}
+
+/* BRILLO */
+
+.menu-container::before{
+
+    content: '';
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    background: radial-gradient(
+        circle,
+        rgba(214,168,106,0.12),
+        transparent 70%
+    );
+
+    top: -140px;
+    right: -140px;
+
+    pointer-events: none;
+}
+
+/* FORM */
+
+.menu-container form{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* LABELS */
+
+.menu-container label{
+
+    color: #e2bc89;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: -8px;
+}
+
+/* INPUTS */
+
+.menu-container input,
+.menu-container select{
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(214,168,106,0.25);
+
+    color: #f5f5f5;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    font-family: 'Manrope', sans-serif;
+
+    transition: all 0.3s ease;
+}
+
+/* SOLO SELECT */
+
+.menu-container select{
+
+    cursor: pointer;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23d6a86a' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position: right 16px center;
+
+    background-size: 16px;
+}
+
+/* HOVER */
+
+.menu-container select:hover{
+
+    border-color: rgba(214,168,106,0.45);
+}
+
+/* FOCUS */
+
+.menu-container select:focus{
+
+    border-color: #d6a86a;
+
+    box-shadow:
+    0 0 0 4px rgba(214,168,106,0.08),
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* OPCIONES */
+
+.menu-container select option{
+
+    background-color: #1a1a1a;
+
+    color: #f5f5f5;
+
+    padding: 10px;
+}
+
+/* BOTON */
+
+.menu-container button{
+
+    margin-top: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #d6a86a,
+        #f0cd97
+    );
+
+    color: #111;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+
+    font-family: 'Manrope', sans-serif;
+
+    letter-spacing: 1px;
+}
+
+.menu-container button:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.01);
+
+    box-shadow:
+    0 15px 30px rgba(214,168,106,0.25);
+
+    filter: brightness(1.05);
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.text-center{
+
+    margin-top: 24px;
+
+    text-align: center;
+}
+
+.text-center a{
+
+    color: #d6a86a;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.text-center a:hover{
+
+    color: white;
+
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   ALERTAS
+========================= */
+
+.container-m4{
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 20px auto 0;
+
+    padding: 0 20px;
+}
+
+.alert{
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+}
+
+.alert-success{
+
+    background-color: rgba(40,167,69,0.15);
+
+    color: #7dff9a;
+
+    border: 1px solid rgba(125,255,154,0.15);
+}
+
+.alert-danger{
+
+    background-color: rgba(220,53,69,0.15);
+
+    color: #ff9ca8;
+
+    border: 1px solid rgba(255,156,168,0.15);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+
+    from{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .header h1{
+
+        font-size: 3rem;
+    }
+
+    .nav{
+
+        width: 90%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        border-radius: 24px;
+    }
+
+    h2{
+
+        font-size: 2rem;
+    }
+
+    .menu-container{
+
+        width: 90%;
+
+        padding: 30px;
+    }
+
+    .card h3{
+
+        font-size: 1.7rem;
+    }
+}

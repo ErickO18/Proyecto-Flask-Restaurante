@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Inicio sesion </title>
+
+    <link rel = "stylesheet" href = "/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body">
+
+<header class = "header"> 
+    <h1>Erick's Deliciuos</h1>
+</header>
+
+
+<div class="container-m4">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  {% block content %}{% endblock %}
+</div>
+
+<main>
+    <div class="menu-container">
+
+
+        <form method="POST">
+
+            <label>Ingrese su nombre de usuario</label>
+            <input type="text" name ="user_login">
+
+            <label>Ingrese su contraseña</label>
+            <input type="password" name ="contraseña_login">
+
+            <button type="submit"> Iniciar Sesión</button>
+        </form>
+
+        <div class="text-center">
+        <a href="{{ url_for('paginas.register') }}">¿No tienes cuenta? Regístrate</a>
+      </div>
+
+    </div>
+</main>
+
+
+</body>
+</html>
+
+
+

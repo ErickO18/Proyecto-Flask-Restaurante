@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %} Resturante {% endblock %} </title>
+
+    <link rel = "stylesheet" href = "/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body">
+
+<header class = "header"> 
+    <h1>Erick's Deliciuos</h1>
+</header>
+
+<nav class="nav">
+    <a href="/platos"> Menú </a>
+    <a href ="/">Inicio</a>
+    <a href="/pedido">Pedir</a>
+    {% if session.get('rol') == 'admin'%}
+    <a href="/proveedores">Proveedores</a>
+    {% endif%}
+    <div>
+      {% if session.get('username') %}
+        <span class="text-white me-3">👤 {{ session['username'] }} ({{ session['rol'] }})</span>
+        <a class="btn btn-outline-light btn-sm" href="{{ url_for('paginas.logout') }}">Cerrar sesión</a>
+      {% endif %}
+    </div>
+</nav>
+
+<main>
+    {% block content %}
+
+    {% endblock %}
+</main>
+
+
+</body>
+</html>

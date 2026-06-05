@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <h2>PROVEEDORES</h2>
+
+    <div class="menu-grid-container">
+        {% for p in proveedores %}
+            <div class="card">
+                <h3>Proveedor: {{ p.nombre_proveedor }}</h3>
+                <p>Producto: {{ p.producto }}</p>
+                
+                <p>Plato asociado: {{ p.nombre_plato }}</p> 
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="menu-container">
+
+        <form action="/registro_proveedor" method="POST">
+
+            <label>Ingrese el nombre del proveedor</label>
+            <input type="text" name ="nombre_proveedor">
+
+            <label>Ingrese el producto</label>
+            <input type="text" name ="producto">
+
+            <select name="plato_selected">
+            <option value="" disabled selected>Elige un plato...</option>
+    
+                {% for p in platos %}
+                    <option value="{{ p.nombre_plato }}">{{ p.nombre_plato }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit"> Registrar proveedor</button>
+        </form>
+
+
+    </div>
+
+{% endblock %}

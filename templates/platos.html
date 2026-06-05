@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h2>Menu</h2>
+
+<div class="menu-grid-container">
+
+    {% for p in platos %}
+        <div class="card">
+            <img src="{{ p['img'] }}" alt="{{ p['nombre_plato'] }}" class="card-img">
+            <h3>{{ p.nombre_plato }}</h3>
+            <p class="precio">${{ p.precio_plato }}</p>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+{% endblock %}

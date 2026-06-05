@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h2>Pedido</h2>
+
+<div class = 'menu-container'>
+
+<form action = "/pidiendo" method="POST">
+
+    <label> Ingresa tu nombre</label>
+    <input type="text" name="nombre" required>
+    <label> Ingresa tu telefono</label>
+    <input type="number" name="telefono" required>
+
+    <select name="plato_selected" required>
+    <option value="" disabled selected>Elige un plato...</option>
+    {% for p in platos %}
+        
+        <option value="{{ p.id_plato }}">{{ p.nombre_plato }}</option>
+    {% endfor %}
+    </select>
+    <label>Ingresa la cantidad de platos que deseas</label>
+    <input type="number" name="cantidad" required>
+
+    <button type="submit">Hacer Pedido</button>
+
+</form>
+
+</div>
+
+
+<div class="menu-container">
+    <h1>Tu pedido</h1>
+    
+    {% if pedidos %}
+        {% for p in pedidos %}
+            <h3>
+                Cliente: {{ p.nombre_cliente }} - 
+                Plato: {{ p.nombre_plato }} - 
+                Cantidad: {{ p.cantidad }}
+            </h3>
+        {% endfor %}
+    {% else %}
+        <p>No hay pedidos registrados aún.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
