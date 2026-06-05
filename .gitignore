@@ -1,0 +1,20 @@
+# Entornos virtuales 
+.venv/
+venv/
+ENV/
+env/
+
+# Caché de Python
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variables de entorno (¡Muy importante si usas python-dotenv!)
+.env
+.flaskenv
+
+# Archivos del sistema y editores
+.DS_Store
+.vscode/
+.idea/
