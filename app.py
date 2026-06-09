@@ -2,6 +2,7 @@ from flask import Flask
 from paginas.rutas import paginas_bp
 from utils import init_db, plato_db, pedido_db, proveedores_db, users_db
 
+
 app = Flask(__name__)
 app.secret_key = 'ericksdelicious12345678910'
 
