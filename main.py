@@ -51,6 +51,8 @@ def main():
     #hacer un pedido
     driver.find_element(By.LINK_TEXT, "Pedir").click()
     
+    time.sleep(5)
+    
     driver.find_element(By.NAME, "nombre").send_keys("Don Juan")
     driver.find_element(By.NAME, "telefono").send_keys("12345678")
 
